@@ -5,7 +5,7 @@
   * \brief Adds versions (modification timestamps) to attachment URLs, so that browser
   *  caches invalidate properly when attachments are updated.
   */
-$RecipeInfo['VersionedAssets']['Version'] = '2017-12-13';
+$RecipeInfo['VersionedAssets']['Version'] = '2021-12-12';
 
 global $LinkFunctions;
 $LinkFunctions['Attach:'] = 'LinkUploadVersioned';
@@ -42,10 +42,9 @@ function LinkUploadVersioned($pagename, $imap, $path, $alt, $txt, $fmt=NULL) {
 	global $VersionedAssetsReattachFileExtension;
 	if ($VersionedAssetsReattachFileExtension == true) {
 		## Re-attach the file extension, so that LinkIcons and such things work properly.
-		preg_match("/\\.[^\\.]+$/", $path, $matches);
+		preg_match('/\.[^\.]+$/', $path, $matches);
 		$versioned_path .= $matches[0];
 	}
 	
 	return LinkIMap($pagename, $imap, $versioned_path, $alt, $txt, $fmt);
 }
-
