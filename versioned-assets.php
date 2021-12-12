@@ -1,6 +1,6 @@
 <?php
 /** \versioned_assets.php
-  * \Copyright (c) 2017 Said Achmiz
+  * \Copyright 2017-2021 Said Achmiz
   * \Licensed under the MIT License
   * \brief Adds versions (modification timestamps) to attachment URLs, so that browser
   *  caches invalidate properly when attachments are updated.
